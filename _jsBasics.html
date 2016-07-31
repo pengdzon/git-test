@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsBasics</title>
+</head>
+<body>
+	<h1>js</h1>
+
+	<script>
+	/* 1 */
+	var obj = {property1:"value1",property2:"value2"};
+	console.log(obj.property1); //output value of property1
+
+	/* 2.1 */
+	// The primitive data type String is stored as a value​
+	var person = "fname";
+	var anotherPerson = person; //store value as reference
+	person = "lname"; //store actual value
+	console.log(anotherPerson); // fname​
+	console.log(person); // lname
+
+
+	/* 2.2
+	var person = "fname";
+	var anotherPerson = person; //store value as reference
+	person.name = "lname"; //store actual value
+	console.log(anotherPerson.name); // lname​
+	console.log(person.name); // lname
+	*/
+	
+	</script>
+</body>
+</html>

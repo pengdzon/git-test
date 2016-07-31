@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>object fit | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.orig {float: left; margin-right: 40px;}
+	.obj-fit, .img-fill {margin: 10px 0 12px; display: inline-block;}
+	.obj-fit img {width: 128px; height: 128px; border: solid 2px #333; object-fit: cover;}
+	.img-fill {width: 128px; height: 128px; border: solid 2px #333;}
+	.img-fill img {width: 100%; min-height: 100%;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+
+			<h1>Fit image</h1>
+
+			<div class="orig">
+				<p>Original resolution</p>
+				<img src="img/gunter.png" alt="">
+			</div>
+
+			<p>Object-fit(css)</p>
+			<div class="obj-fit"><img src="img/gunter.png" alt=""></div>
+			
+			<p>Image fill(jquery)</p>
+			<div class="img-fill"><img src="img/gunter.png" alt=""></div>
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>	
+	<script src="js/jquery-imagefill.js"></script>
+	<script>
+	$('.img-fill').imagesLoaded(function(){
+		$('.img-fill').imagefill(); 
+	});
+	</script>
+</body>
+</html>

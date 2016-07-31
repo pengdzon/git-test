@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>sort list | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.col {float: left; width: 20%;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+
+			<h1>Sort list</h1>
+			<div class="clrf">
+				<div class="col">
+					<h2>[before]</h2>
+					<ul>
+						<li>Lorem</li>
+						<li>ipsum</li>
+						<li>dolor</li>
+						<li>sit</li>
+						<li>amet,</li>
+						<li>consectetur</li>
+						<li>adipisicing</li>
+						<li>elit.</li>
+						<li>Eligendi</li>
+						<li>itaque</li>
+						<li>quos</li>
+						<li>eius.</li>
+					</ul>
+				</div>
+				<div class="col">
+					<h2>[after]</h2>
+					<ul id="sortThis">
+						<li>Lorem</li>
+						<li>ipsum</li>
+						<li>dolor</li>
+						<li>sit</li>
+						<li>amet,</li>
+						<li>consectetur</li>
+						<li>adipisicing</li>
+						<li>elit.</li>
+						<li>Eligendi</li>
+						<li>itaque</li>
+						<li>quos</li>
+						<li>eius.</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		var ul = $('#sortThis'),
+		lis = $('li', ul).get();
+
+		lis.sort(function (a, b) {
+		  return ($(a).text().toUpperCase() < $(b).text().toUpperCase()) ? -1 : 1;
+		});
+
+		ul.append(lis);
+		console.log("list sorted");
+	</script>
+</body>
+</html>

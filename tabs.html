@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>tabs | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.nav-tabs {border-bottom: solid 1px #eee; margin-bottom: 0;}
+	.nav-tabs:after {content:''; display: table; clear: both;}
+	.nav-tabs li {display: inline; float: left; border: 1px solid #ddd; margin: 0 0 -1px -1px;}
+	.nav-tabs li:first-child, .nav-tabs li:first-child a {border-radius: 4px 0 0 0;}
+	.nav-tabs li:last-child, .nav-tabs li:last-child a {border-radius: 0 4px 0 0;}
+	.nav-tabs a {display: block; padding: 5px 12px; background: #eee; border-bottom: 0;}
+	.nav-tabs a:hover, .nav-tabs .active {background: #fff;}
+	.nav-tabs .active {border-bottom: solid 1px #fff; background: #fff;}
+	.nav-tabs .active a {position: relative; background: #eee; background: #fff;}
+	.tab-pane {display: none; padding: 8px 15px;}
+	.tab-content .active {display: block;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+			<h1>Tabs</h1>
+
+			<!-- start tabs -->
+			<ul id="myTab" class="nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#" role="tab">First</a></li>
+				<li role="presentation"><a href="#" role="tab">Second</a></li>
+				<li role="presentation"><a href="#" role="tab">Turd</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active">
+					<h2>First tab</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur reprehenderit nam incidunt dolorem, veritatis repellat mollitia ullam, asperiores, suscipit deleniti consectetur fuga sequi illum, tenetur facilis aliquam. Ex, deserunt, amet.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis neque hic nesciunt error impedit iure optio dicta, nihil doloribus quis omnis eius quas, maiores perspiciatis inventore ipsam voluptatum. Quam, ea!</p>
+				</div>
+				<div class="tab-pane">
+					<h2>Second tab</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor praesentium harum culpa eveniet quis ab ducimus dolore, enim, dolores ad nisi, est in? Quis delectus sequi quasi, nobis expedita debitis.</p>
+				</div>
+				<div class="tab-pane">
+					<h2>Turd tab</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor praesentium harum culpa eveniet quis ab ducimus dolore, enim, dolores ad nisi, est in? Quis delectus sequi quasi, nobis expedita debitis.</p>
+				</div>
+			</div>
+
+		</div>		
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function(){
+		$('.nav-tabs li').on('click', function(){
+			// style nav-tab
+			$('.nav-tabs li').removeClass('active');
+			$(this).addClass('active');
+			// display tab-pane
+			$('.tab-pane').removeClass('active');
+			$('.tab-pane').eq($(this).index()).addClass('active');
+			return false;
+		});
+	});
+	</script>
+</body>
+</html>

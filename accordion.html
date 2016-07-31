@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>accordion | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.accord_head, .accord_body {margin: 0; padding: 5px 26px; border-bottom: 0;}
+	.accord_head {margin-top: 2px; border: solid 1px #ccc; cursor: pointer; background: #eee; font-weight: 400;}
+	.accord_head.active {background: #fff; pointer-events: none;}
+	.accord_body {margin-bottom: 2px; display: none; border: solid 1px #ccc; border-top: 0;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+			<h1>Accordion</h1>
+			
+			<h2 class="accord_head">Recent Posts</h2>
+			<div class="accord_body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti rem veniam voluptatem corporis minus accusantium dolorum cumque placeat, tempora error. Consequatur recusandae odit eligendi quibusdam sapiente aliquam voluptate deleniti.</p>
+			</div>
+			<h2 class="accord_head">Popular Posts</h2>
+			<div class="accord_body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti rem veniam voluptatem corporis minus accusantium dolorum cumque placeat, tempora error. Consequatur recusandae odit eligendi quibusdam sapiente aliquam voluptate deleniti.</p>
+			</div>
+			<h2 class="accord_head">Archived Posts</h2>
+			<div class="accord_body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat rem nulla voluptas fuga doloremque quasi, modi natus corrupti officia fugit excepturi non, quaerat repudiandae error blanditiis hic! Possimus veniam exercitationem eos odio consequatur tempora. Voluptatibus velit illo, laudantium ipsa, aliquam sit ad tempora! Soluta vel, ipsa dolorum dolores obcaecati fugiat quia dignissimos commodi ipsam iste assumenda molestiae! Laborum illo ipsam eligendi eaque nostrum iste inventore doloribus, veniam magni. Accusantium aperiam nobis quae. Unde, tempore. Recusandae nesciunt unde, ducimus ratione vitae beatae blanditiis, repellat fugit dolores facilis voluptatum similique facere explicabo dolore vel deserunt saepe ipsam aspernatur quos earum. Quae non veniam pariatur velit error esse ipsam nisi aliquam aut, quos ab deserunt itaque optio odit impedit ullam, nemo, autem aperiam.</p>
+			</div>
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function(){
+		$('.accord_head').on('click',function(){
+			// style accord_head
+			$('.accord_head').removeClass('active');
+			$(this).addClass('active');
+			// display accord_body
+			var x = $(this).next('.accord_body');
+			$('.accord_body').not(x).slideUp("fast");
+			x.slideDown("fast");
+		});
+	});
+	</script>
+</body>
+</html>

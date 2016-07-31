@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>img swap | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	img {cursor: pointer;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+
+			<h1>Image swap using JS</h1>
+
+			<h2>hover</h2>
+			<img src="img/btn.gif" alt="alt" width="50" class="hover">
+
+			<h2>click</h2>
+			<img src="img/btn.gif" alt="alt" width="50" class="click">
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function(){
+
+		// on hover
+		$(".hover").hover(function(){
+			this.setAttribute("src",this.getAttribute("src").replace(".","_ov."));
+			}, function() {
+			this.setAttribute("src",this.getAttribute("src").replace("_ov.","."));
+			}
+		);
+
+		// on click
+		$('.click').on('click',function(){
+			if(this.src.indexOf("_ov.") != -1){
+				this.setAttribute("src",this.getAttribute("src").replace("_ov.","."));
+			}
+			else {
+				this.setAttribute("src",this.getAttribute("src").replace(".","_ov."));
+			}
+		});
+
+	});
+	</script>
+</body>
+</html>

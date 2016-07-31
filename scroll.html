@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>scroll | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	/* sticky header */
+	.box-a, .navi {margin: 0 auto; width: 100%; max-width: 960px; top:0; right:0; left: 0; padding: 8px;}
+	.box-a {background: #9b59b6; height: 40px;}
+	.navi {background: #3498db; margin-bottom: 40px;}
+	.affix{position:fixed; z-index: 2;}
+
+	/* navigation */
+	.section {margin-bottom: 50px; padding: 5px; font-size: 18px;}
+	.section_h2 {font-weight: 700;}
+	.scroll-nav .active {border: solid 1px #333;}
+	.scroll-nav li {display: inline-block;}
+	.scroll-nav a {margin: 5px; display: inline-block; padding: 5px; border: solid 1px #ddd; background: #eee; color: #333;}
+	.scroll-nav a:hover {background: #fff;}
+	.to-top {display: none; position: fixed; right: 26px; bottom: 26px; padding: 5px; border: solid 1px #090; font-weight: 700; color: #090; background: #fff;}
+
+	/* fade in hidden elements */
+	.hideme {opacity:0; padding: 12px; background: #34495e; color: #fff;}
+
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+
+			<h1>Smooth scroll | Sticky header | Generate navigation | Show elements visible to viewport | spyscroll</h1>
+
+			<div class="box-a"></div>
+			<div class="navi">
+				<ul class="scroll-nav"></ul>
+			</div>
+
+			<div id="section-1" class="section">
+				<h2 class="section_h2">Section 1</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi veniam enim culpa fuga sequi distinctio, quos, impedit ullam ipsum nobis quidem esse voluptate accusamus commodi similique ex, rerum quam, recusandae facere maxime adipisci iusto repellendus. Impedit consequuntur optio sunt, vero, debitis ea nobis veniam quibusdam voluptas, iure ut laboriosam officiis quidem recusandae. Aliquid eum laboriosam fuga, beatae minus nostrum odit perferendis earum maiores, eligendi nemo natus labore rem porro possimus delectus ad voluptates iste minima fugit obcaecati ratione ducimus quam! Officiis praesentium quo provident odio corporis sint eligendi, vero accusamus deleniti! Architecto itaque voluptas ducimus, similique repellat reprehenderit. Eaque numquam dolorem minus quibusdam nesciunt corporis facilis, blanditiis non veniam reiciendis doloribus mollitia, molestiae impedit. Ducimus doloremque, voluptatum fuga neque a dolor sit incidunt dolores error sint quae eaque numquam aliquid architecto, quisquam ex eos. Eveniet libero doloremque, neque quidem perferendis culpa praesentium ab enim, sequi sunt similique. Eaque aut possimus odio ratione at voluptate. Itaque amet consequatur dolorum perspiciatis tenetur reprehenderit libero sint praesentium officiis aspernatur fugiat ullam unde minima, exercitationem voluptatibus dolore veniam voluptas tempore, id suscipit similique accusantium. Quae aperiam vitae aut, optio asperiores dolores illo doloremque delectus ipsa harum sint minus quibusdam quasi sit veritatis facere. Autem?</p>
+			</div>
+
+			<div id="section-2" class="section">
+				<h2 class="section_h2">Section 2</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, soluta dignissimos pariatur.</p>
+			</div>
+
+			<div id="section-3" class="section">
+				<h2 class="section_h2">Section 3</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad rerum laborum, suscipit minima saepe quis natus omnis. Ab temporibus ipsam possimus similique, vel culpa qui veniam nulla iste voluptate labore, amet iusto, modi asperiores enim nam impedit! Inventore quam ducimus ullam saepe facere officiis repellat aperiam perferendis iste ipsum fuga esse ut nulla est nisi, culpa dolorem illum illo commodi veritatis. Dolorem iste laborum officia consequatur veniam quia accusamus, quo voluptatum quae deserunt velit modi quod. Nostrum consectetur similique laboriosam odio enim voluptas reiciendis adipisci expedita dolorem optio? Earum repellat veritatis at, natus totam quo, iure atque! Cupiditate maiores in quisquam excepturi, quasi odio quos molestiae sit aliquam perferendis minima eum deserunt dolores dolor. Tempore obcaecati enim rerum eligendi, odio, commodi facilis, quaerat voluptatem rem nostrum alias eius optio ratione ipsam explicabo quis excepturi vero a ut illo asperiores repellat? Commodi vero nostrum voluptates necessitatibus alias at, labore excepturi! Ducimus id dolorum magni sequi, neque in ad dolore, commodi corrupti dolorem officiis, repellendus et soluta natus magnam reprehenderit eos aut eaque. Laudantium dolores iusto voluptatibus provident blanditiis dolorum necessitatibus, facilis.</p>
+			</div>
+
+			<div id="section-4" class="section">
+				<h2 class="section_h2">Section 4</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officiis nisi cum assumenda, dolore corporis aliquid natus aspernatur tempore alias libero maiores id blanditiis atque eum pariatur sequi in excepturi repellat nesciunt rem perspiciatis, sed aut? Neque, dignissimos. Magnam dolorem voluptates culpa eligendi voluptatibus sed optio, necessitatibus quis cum vero ducimus voluptatem excepturi at, deleniti nemo, in quas libero ut nam corporis hic voluptas quisquam odio? Quas in facere blanditiis cumque cum eos quasi dignissimos minus, voluptatibus tempora! Harum asperiores officiis corporis dignissimos modi, nemo dolore molestiae eligendi eum illum, autem impedit maxime quae recusandae architecto iste nihil dicta ipsam voluptatibus. Fugiat mollitia deserunt necessitatibus laborum, quidem rem eligendi praesentium, officia odio facilis ab nulla accusantium. Ducimus magni qui possimus natus nam molestiae sunt perferendis non excepturi facilis accusamus quo similique velit odio laboriosam dicta repellat animi minima explicabo provident iusto, veniam nisi quisquam. Velit, sit repellendus, perspiciatis, praesentium maxime ab soluta blanditiis alias temporibus, eveniet pariatur! Quidem aut assumenda voluptas consequatur, sunt corporis excepturi repellat id dicta, consectetur repellendus officiis eos quas quia at, nesciunt voluptatibus eius recusandae repudiandae et nam. Aliquid possimus consectetur culpa! Ab neque earum necessitatibus ea qui sed consequuntur blanditiis culpa beatae, itaque et minima laborum rem, recusandae consectetur facere rerum enim eveniet voluptate! Ipsam quas voluptates eos, debitis, fuga amet sunt maxime, porro praesentium dolorem pariatur sapiente! Soluta quis culpa, vitae libero ipsum inventore aperiam officiis perspiciatis velit tempore quisquam incidunt iure omnis. Modi suscipit labore praesentium hic distinctio voluptas, eum natus! Asperiores laboriosam suscipit odio ab molestias! Dolore autem explicabo distinctio iusto libero at nemo, quibusdam deserunt voluptatum, quis odit ut ex magnam eaque, consequuntur. Quas eaque fugiat minima sequi placeat nesciunt ex aut voluptatem beatae aliquam, quis alias possimus dignissimos sint quam reiciendis non recusandae, ut voluptate molestias delectus soluta velit autem! Placeat optio, fugiat recusandae iusto veniam quibusdam officia commodi deleniti delectus sit nihil est aliquid pariatur dolorum enim ullam reiciendis.</p>
+			</div>
+
+			<div id="section-5" class="section hideme">
+				<h2 class="section_h2">Section 5</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore delectus, nemo necessitatibus tenetur maxime facere dolor quis, ullam magnam. Quisquam voluptatibus non aliquid consequuntur explicabo magnam eius iste corporis libero hic fugit voluptas perspiciatis eos, dolorum in optio saepe error delectus omnis aperiam adipisci officiis! Excepturi, quasi eligendi dolorum deserunt perferendis tempore! Ducimus officiis eum vitae fuga ex quibusdam numquam soluta provident minima. Doloremque expedita delectus quis vel quibusdam aperiam perferendis aspernatur sed, eos eius odit ad accusamus sapiente blanditiis veniam adipisci architecto, eaque omnis nostrum, nisi veritatis culpa quasi. Commodi adipisci, nemo. Nobis repudiandae, possimus odio ratione, error voluptate aut, exercitationem nihil dolorum debitis libero earum ex voluptatem quo maxime, aperiam nesciunt. Asperiores ipsa doloremque rerum temporibus quasi distinctio repudiandae cumque, nam maiores sint vero in dolores esse doloribus placeat illo, tempora, officia soluta iure modi! Saepe mollitia quaerat aut, a nemo vitae quas eaque sit. Amet, soluta suscipit inventore, unde nobis neque quibusdam praesentium voluptatem! Vitae nemo, atque! Quas, laboriosam totam beatae? Repellendus veniam inventore consequuntur perferendis illum quia ipsa autem minus ea suscipit architecto dolor quisquam tenetur possimus, sit excepturi, vel odit placeat molestiae ducimus. Deserunt quibusdam porro qui nostrum aspernatur molestias, unde. Officiis quibusdam repudiandae placeat ratione, impedit distinctio cumque iste vero, sunt porro quae aut necessitatibus nobis accusantium itaque eligendi deserunt voluptatum quasi, quisquam tempore.</p>
+			</div>
+
+			<div id="section-6" class="section hideme">
+				<h2 class="section_h2">Section 6</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque molestias in nemo cumque animi. Excepturi cupiditate veniam aliquam quae hic quasi dolore ducimus labore nostrum odio vel possimus quas esse officia saepe et maiores dicta quo, incidunt corporis voluptate maxime! Mollitia, alias. Animi porro rerum ullam consequatur ipsa saepe earum, provident ut voluptate eius veritatis, amet error corrupti aliquam obcaecati omnis dolor eaque, nobis unde distinctio dolorem voluptates. Eligendi assumenda ex, tempora repellat doloremque voluptas sit sequi, sapiente neque adipisci explicabo, consequatur id. Corrupti excepturi incidunt repellendus optio nostrum eius. Laboriosam deserunt et vero similique ipsa beatae labore unde doloribus, in distinctio, exercitationem praesentium ipsam atque dolor totam. Recusandae, deleniti totam rem asperiores similique cumque voluptate! Atque, nobis itaque in eligendi. Reiciendis eaque deserunt mollitia quas maxime, quos laboriosam iste! Reiciendis nostrum eius illo optio culpa voluptatum, esse, veniam similique ipsam natus quas ad earum est labore, exercitationem eligendi beatae tempore nihil ducimus doloremque nesciunt expedita. Perspiciatis eum reiciendis inventore aperiam rerum in! Laboriosam, in, nisi. Est accusantium, laudantium! Repudiandae consequatur tenetur, repellendus numquam neque, minus omnis doloremque reiciendis provident cum non deserunt sed rerum amet quasi soluta enim perferendis! Dolore error, ea labore commodi a assumenda corporis molestiae! Velit ex accusamus beatae eos iste quisquam odio aliquam debitis nesciunt. Corporis atque incidunt dolor maiores, a harum cumque similique, labore numquam unde eum repellat. Dicta labore laborum quia provident aliquid architecto vero ea consequuntur impedit eligendi temporibus assumenda quae recusandae, nobis quas mollitia in excepturi possimus esse nam! A quam quisquam nam nemo nobis mollitia necessitatibus! Beatae tempore eaque repellat soluta, laboriosam esse perspiciatis nesciunt, officia quae nulla quibusdam, reprehenderit commodi a, numquam reiciendis itaque! Provident cumque enim voluptatibus, incidunt vero molestias non culpa! Pariatur quasi asperiores laudantium eius. Deleniti cum eum, inventore, veritatis quam non, voluptates sit deserunt, quasi reiciendis ullam alias eos ipsa id fugiat quod illum ducimus modi repudiandae neque repellendus saepe odio possimus. Cum, obcaecati, rem.</p>
+			</div>
+
+			<div id="section-7" class="section hideme">
+				<h2 class="section_h2">Section 7</h2>
+				<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque molestias in nemo cumque animi. Excepturi cupiditate veniam aliquam quae hic quasi dolore ducimus labore nostrum odio vel possimus quas esse officia saepe et maiores dicta quo, incidunt corporis voluptate maxime! Mollitia, alias. Animi porro rerum ullam consequatur ipsa saepe earum, provident ut voluptate eius veritatis, amet error corrupti aliquam obcaecati omnis dolor eaque, nobis unde distinctio dolorem voluptates. Eligendi assumenda ex, tempora repellat doloremque voluptas sit sequi, sapiente neque adipisci explicabo, consequatur id. Corrupti excepturi incidunt repellendus optio nostrum eius. Laboriosam deserunt et vero similique ipsa beatae labore unde doloribus, in distinctio, exercitationem praesentium ipsam atque dolor totam. Recusandae, deleniti totam rem asperiores similique cumque voluptate! Atque, nobis itaque in eligendi. Reiciendis eaque deserunt mollitia quas maxime, quos laboriosam iste! Reiciendis nostrum eius illo optio culpa voluptatum, esse, veniam similique ipsam natus quas ad earum est labore, exercitationem eligendi beatae tempore nihil ducimus doloremque nesciunt expedita. Perspiciatis eum reiciendis inventore aperiam rerum in! Laboriosam, in, nisi. Est accusantium, laudantium! Repudiandae consequatur tenetur, repellendus numquam neque, minus omnis doloremque reiciendis provident cum non deserunt sed rerum amet quasi soluta enim perferendis! Dolore error, ea labore commodi a assumenda corporis molestiae! Velit ex accusamus beatae eos iste quisquam odio aliquam debitis nesciunt. Corporis atque incidunt dolor maiores, a harum cumque similique, labore numquam unde eum repellat. Dicta labore laborum quia provident aliquid architecto vero ea consequuntur impedit eligendi temporibus assumenda quae recusandae, nobis quas mollitia in excepturi possimus esse nam! A quam quisquam nam nemo nobis mollitia necessitatibus! Beatae tempore eaque repellat soluta, laboriosam esse perspiciatis nesciunt, officia quae nulla quibusdam, reprehenderit commodi a, numquam reiciendis itaque! Provident cumque enim voluptatibus, incidunt vero molestias non culpa! Pariatur quasi asperiores laudantium eius. Deleniti cum eum, inventore, veritatis quam non, voluptates sit deserunt, quasi reiciendis ullam alias eos ipsa id fugiat quod illum ducimus modi repudiandae neque repellendus saepe odio possimus. Cum, obcaecati, rem.</p>
+			</div>
+
+			<a href="#" class="to-top">UP</a>
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function() {
+		var $window = $(window), 
+		$navi = $('.navi');
+
+		setTimeOut();
+		$window.resize(function() {
+			setTimeOut();
+		});
+
+		function setTimeOut() {
+			setTimeout(function() {
+				stickNav($navi.offset().top);
+				setNaviGhost($navi.offset().top);
+			}, 300);
+		}
+		
+		function stickNav(e) {
+			$window.scroll(function() {
+				if ($window.scrollTop() > e) {
+					$navi.addClass('affix');
+				} else {
+					$navi.removeClass('affix');
+				}
+			});
+		}
+
+		function setNaviGhost() {
+			$('.navi-ghost').css({
+				'height': $navi.outerHeight(),
+				'margin-bottom': $navi.css('margin-bottom')
+			});
+		}
+
+
+		/* @generate navigation
+		========================== */
+		$navi.wrap('<div class="navi-ghost"></div>');
+		var $h2 = $('.section_h2');
+		var $section = $('.section');
+		for (var i = 0; i < $section.length; i++) {
+			// create navigation using its titles
+			$('.scroll-nav').append('<li><a>section ' + (i + 1) + '</a></li>');
+			// link navigation to its corresponding section
+			$('.scroll-nav a')[i].setAttribute('href', '#' + $section[i].getAttribute('id'));
+		}
+		setNaviGhost();
+		$('.scroll-nav li:first-child a').addClass('active');
+
+
+		var thisAA;
+		/* @smooth scroll to id
+		========================== */
+		$('.scroll-nav a').click(function() {
+			var target = $(this).attr('href');
+			thisAA = $(this);
+			$('html, body').stop();
+			$('html, body').animate({
+				scrollTop: ($(target).offset().top - $navi.outerHeight(true, true)) + 30
+			}, 800, function(){
+				document.querySelector('.active').setAttribute('class', ' ');
+				$(thisAA).addClass('active');
+			})
+			return false;
+		});
+
+
+		/* @fade in elements when visible in viewport
+		========================== */
+		$window.scroll(function() {
+			$(".hideme").each(function() {
+				/* Check the location of each desired element */
+				var objectBottom = $(this).offset().top + 120;
+				var windowBottom = $window.scrollTop() + $window.innerHeight();            
+				/* If the element is completely within bounds of the window, fade it in */
+				if (objectBottom < windowBottom) {
+					//object comes into view (scrolling down)
+					if ($(this).css("opacity") == 0) {
+						$(this).fadeTo(500, 1);
+					}
+				} else {
+					//object goes out of view (scrolling up)
+					if ($(this).css("opacity") == 1) {
+						$(this).fadeTo(500, 0);
+					}
+				}
+			});
+		});
+
+
+		/* @scroll to top
+		========================== */
+		$('.to-top').on('click', function() {
+			$('body').animate({
+				scrollTop: 0
+			}, 600);
+			return false;
+		});
+		// show to-top button and hide after scroll up
+		var lastScrollTop = 0;
+		$window.scroll(function(event) {
+			var st = $(this).scrollTop();
+			if (st > lastScrollTop) {
+				$('.to-top').fadeIn()
+			} else {
+				$('.to-top').fadeOut()
+			}
+			lastScrollTop = st;
+		});
+		// to-top button only hidden on page's top
+		/*
+		if($('.to-top').length > 0){	
+			$window.scroll(function(){
+				$('body').scrollTop() > 12 ? $('.to-top').fadeIn() : $('.to-top').fadeOut();
+			});
+		}
+		*/
+
+		
+		/* @scroll spy
+		========================== */
+		$(function() {
+			'use strict';
+			var section = document.querySelectorAll(".section");
+			var sections = {};
+			var i = 0;
+			Array.prototype.forEach.call(section, function(e) {
+				sections[e.id] = e.offsetTop - 60;
+			});
+			window.onscroll = function() {
+				var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+				for (i in sections) {
+					if (sections[i] <= scrollPosition) {
+						document.querySelector('.active').setAttribute('class', ' ');
+						document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+					}
+				}
+			};
+		});
+
+	}); //end document.ready
+	</script>
+</body>
+</html>

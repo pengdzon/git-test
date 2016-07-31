@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>sync ele | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<style>
+	.navi {margin-bottom: 12px;}
+	.navi li {display: inline-block; padding: 5px; border: solid 1px #ddd; background: #eee; cursor: pointer;}
+	.navi .p4 {background: #fff;}
+</style>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+
+			<h1>Sync ele</h1>
+			
+			<p>nav 1</p>
+			<ul class="nav1 navi">
+				<li>item-1</li>
+				<li>item-2</li>
+				<li>item-3</li>
+			</ul>
+			<p>nav 2</p>
+			<ul class="nav2 navi">
+				<li>item-1</li>
+				<li>item-2</li>
+				<li>item-3</li>
+			</ul>
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function(){
+
+		$('.navi li').hover(function(){
+			var x = $(this).index()+1;
+			$('.navi li:nth-child('+x+')').addClass('p4');
+		},
+		function(){
+			$('.navi li').removeClass('p4');
+		});
+
+	});
+	</script>
+</body>
+</html>

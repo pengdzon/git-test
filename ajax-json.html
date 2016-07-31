@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ajax-json | JS101</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+	.listItems, .listItems--2 {padding: 0 40px;}
+	.btn {margin: 12px 20px;}
+	.btn-more {display: inline-block; padding: 5px; border: 1px solid #333; border-radius: 4px; background-color: #222; color: #9d9d9d; font-weight: bold; text-decoration: none; cursor: pointer;}
+	.btn-more:hover {background-color: #333;}
+	</style>
+</head>
+<body>
+
+	<header></header>
+	<main>
+		<div class="wrap">
+			<h1>AJAX-JSON</h1>
+
+			<h2>view more:</h2>
+			<ol class="listItems"></ol>
+			<p class="btn"><a class="btn-more">View More</a></p>
+
+			<h2>list all:</h2>
+			<ol class="listItems--2"></ol>
+
+		</div>
+	</main>
+	<footer></footer>
+
+	<script src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(function(){
+
+		// #pindot
+		pindot();
+		var counter = 0;
+		$('.btn-more').on('click', function(){ pindot(); });
+		
+		function pindot() {
+		$.get("js/todo.json", function(data) {
+				for (var i = 0; i <= 24; i++) {
+					$(".listItems").append('<li>' + data[counter]['title'] + '</li>');
+					// console.log(data[counter]['id'], data[counter]['title']);
+					counter++;
+				}
+		});
+		};
+
+		// #list all
+		$.get("js/todo.json", function(data) {
+			$.each(data, function(index, data) {
+				$('.listItems--2').append("<li>"+data.title+"</li>")
+				// console.log(data.id,data.title);
+			});
+
+			data.sort(function(a, b) {
+				// console.log(data);
+			});
+		});
+
+	});
+	</script>
+</body>
+</html>
